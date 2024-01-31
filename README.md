@@ -2,15 +2,20 @@
 
 *S*pace *Ch*eck: A tool to check the open/close status of hackspaces.
 
-Usage:
+# Examples
+
+To list the status of all hackspaces:
 ```sh
 $ ./spack
-entropia	open
-stratum0	open
+/dev/tal                                          false
+/usr/space                                        true
+57North Hacklab                                   false
+<name>space                                       true
+[...]
 ```
 
-## Supported Hackspaces
-
-* [Entropia](https://entropia.de)
-* [muCCC](https://muc.ccc.de)
-* [Stratum 0](https://stratum0.org)
+To get a specific hackspace:
+```sh
+$ ./spack | grep Entropia
+Entropia                                          true
+```
