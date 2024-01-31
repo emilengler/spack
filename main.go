@@ -16,6 +16,7 @@ type Space struct {
 func main() {
 	spaces := []Space{
 		{name: "entropia", url: "https://club.entropia.de/spaceapi", status: "state.open"},
+		{name: "stratum0", url: "https://status.stratum0.org/status.json", status: "isOpen"},
 	}
 
 	for _, space := range spaces {
