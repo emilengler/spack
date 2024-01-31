@@ -15,6 +15,7 @@ type Space struct {
 
 var Spaces []Space = []Space{
 	{name: "entropia", url: "https://club.entropia.de/spaceapi", status: "state.open"},
+	{name: "muccc", url: "https://api.muc.ccc.de/spaceapi.json", status: "state.open"},
 	{name: "stratum0", url: "https://status.stratum0.org/status.json", status: "isOpen"},
 }
 
