@@ -13,13 +13,13 @@ type Space struct {
 	status string
 }
 
-func main() {
-	spaces := []Space{
-		{name: "entropia", url: "https://club.entropia.de/spaceapi", status: "state.open"},
-		{name: "stratum0", url: "https://status.stratum0.org/status.json", status: "isOpen"},
-	}
+var Spaces []Space = []Space{
+	{name: "entropia", url: "https://club.entropia.de/spaceapi", status: "state.open"},
+	{name: "stratum0", url: "https://status.stratum0.org/status.json", status: "isOpen"},
+}
 
-	for _, space := range spaces {
+func main() {
+	for _, space := range Spaces {
 		resp, err := http.Get(space.url)
 		if err != nil {
 			panic(err)
