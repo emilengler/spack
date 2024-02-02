@@ -25,10 +25,10 @@ type SpaceState struct {
 	Open any `json:"open"`
 }
 
-type Status map[string]bool
+type OpenStatus map[string]bool
 
 // orderKeys orders the keys of a space status map alphabetically
-func (s Status) orderKeys() []string {
+func (s OpenStatus) orderKeys() []string {
 	keys := make([]string, 0)
 	for key := range s {
 		keys = append(keys, key)
@@ -56,7 +56,7 @@ func get(url string) ([]byte, error) {
 }
 
 // parseAPI parses the Space API output into a map consisting of space/status pairs
-func parseAPI(api []byte) (Status, error) {
+func parseAPI(api []byte) (OpenStatus, error) {
 	// parse the actual json
 	spaces := make([]Space, 0)
 	err := json.Unmarshal(api, &spaces)
@@ -65,7 +65,7 @@ func parseAPI(api []byte) (Status, error) {
 	}
 
 	// iterate through all entries and populate the actual map from it
-	status := make(Status)
+	status := make(OpenStatus)
 	for _, space := range spaces {
 		// skip spaces with missing name
 		if space.Data.Name == "" {
