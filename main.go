@@ -97,6 +97,6 @@ func main() {
 	}
 
 	for _, space := range status.orderKeys() {
-		fmt.Printf("%-49s %t\n", space, status[space])
+		fmt.Printf("%s %t\n", space, status[space])
 	}
 }

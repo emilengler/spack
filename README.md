@@ -7,15 +7,14 @@
 To list the status of all hackspaces:
 ```sh
 $ ./spack
-/dev/tal                                          false
-/usr/space                                        true
-57North Hacklab                                   false
-<name>space                                       true
+/dev/tal false
+57North Hacklab false
+<name>space false
 [...]
 ```
 
 To get a specific hackspace:
 ```sh
 $ ./spack | grep Entropia
-Entropia                                          true
+Entropia true
 ```
